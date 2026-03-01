@@ -1,38 +1,56 @@
-import { type User, type InsertUser } from "@shared/schema";
-import { randomUUID } from "crypto";
-
-// modify the interface with any CRUD methods
-// you might need
+import { db } from "./db";
+import { 
+  products, 
+  contactMessages,
+  type InsertProduct,
+  type Product,
+  type InsertContactMessage,
+  type ContactMessage
+} from "@shared/schema";
+import { eq, and } from "drizzle-orm";
 
 export interface IStorage {
-  getUser(id: string): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
+  // Products
+  getProducts(filters?: { category?: string, subcategory?: string, isFeatured?: string }): Promise<Product[]>;
+  getProduct(id: number): Promise<Product | undefined>;
+  
+  // Contact Messages
+  createContactMessage(message: InsertContactMessage): Promise<ContactMessage>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
+export class DatabaseStorage implements IStorage {
+  async getProducts(filters?: { category?: string, subcategory?: string, isFeatured?: string }): Promise<Product[]> {
+    let query = db.select().from(products).$dynamic();
+    
+    const conditions = [];
+    if (filters?.category) {
+      conditions.push(eq(products.category, filters.category));
+    }
+    if (filters?.subcategory) {
+      conditions.push(eq(products.subcategory, filters.subcategory));
+    }
+    if (filters?.isFeatured === 'true') {
+      conditions.push(eq(products.isFeatured, true));
+    } else if (filters?.isFeatured === 'false') {
+      conditions.push(eq(products.isFeatured, false));
+    }
 
-  constructor() {
-    this.users = new Map();
+    if (conditions.length > 0) {
+      query = query.where(and(...conditions));
+    }
+
+    return await query;
   }
 
-  async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+  async getProduct(id: number): Promise<Product | undefined> {
+    const [product] = await db.select().from(products).where(eq(products.id, id));
+    return product;
   }
 
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+  async createContactMessage(message: InsertContactMessage): Promise<ContactMessage> {
+    const [created] = await db.insert(contactMessages).values(message).returning();
+    return created;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
