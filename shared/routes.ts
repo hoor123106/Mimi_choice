@@ -22,6 +22,7 @@ export const api = {
       input: z.object({
         category: z.string().optional(),
         subcategory: z.string().optional(),
+        size: z.string().optional(),
         isFeatured: z.enum(['true', 'false']).optional()
       }).optional(),
       responses: {

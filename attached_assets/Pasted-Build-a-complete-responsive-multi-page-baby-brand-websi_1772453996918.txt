@@ -1,0 +1,282 @@
+Build a complete responsive multi-page baby brand website named Mimi Choice.
+
+The brand sells baby feeders and teats (nipples). The website should look soft, modern, premium, and baby-friendly.
+
+Use logo colors (Red + Purple) but overall theme should be:
+
+Soft Light Blue background
+
+Dark Blue accents
+
+Red buttons (CTA)
+
+Purple hover effects
+
+Rounded corners
+
+Smooth animations
+
+Clean Shopify-style layout
+
+Use modern font like Poppins or Nunito.
+
+Make it fully responsive (Mobile + Desktop).
+
+🌐 WEBSITE PAGES
+
+Create these separate pages:
+
+Home Page
+
+Feeders Page
+
+Wide Neck Feeders Page
+
+240ml Wide Neck Page
+
+340ml Wide Neck Page
+
+Regular Feeders Page
+
+Teats Page
+
+About Us Page
+
+Contact Us Page
+
+Privacy Policy Page (separate page)
+
+Header and Footer must appear on ALL pages.
+
+🧭 HEADER STRUCTURE
+
+Left side: Logo (Mimi Choice)
+
+Right side menu:
+
+Home
+
+Products (Dropdown)
+
+About Us
+
+Contact
+
+Privacy Policy
+
+📦 PRODUCTS DROPDOWN STRUCTURE
+
+Inside "Products" dropdown show:
+
+Feeders
+
+Teats
+
+Only these two inside products menu.
+
+🍼 NAVIGATION LOGIC (IMPORTANT)
+
+When user clicks:
+
+👉 Feeders
+Open Feeders Page showing 2 category cards:
+
+Wide Neck
+
+Regular Feeders
+
+👉 When user clicks Wide Neck
+Open NEW PAGE showing 2 category cards:
+
+240ml
+
+340ml
+
+👉 When user clicks 240ml
+Open new page showing only 240ml wide neck feeder products.
+
+👉 When user clicks 340ml
+Open new page showing only 340ml wide neck feeder products.
+
+👉 When user clicks Regular Feeders
+Open new page showing Regular feeder products.
+
+👉 When user clicks Teats
+Open Teats Page showing all teat products.
+
+🏠 HOME PAGE STRUCTURE
+
+1️⃣ Header
+
+2️⃣ Hero Section
+
+Large beautiful baby image (happy baby drinking milk from feeder)
+
+Soft background
+
+Big headline like:
+"Safe & Premium Feeders for Your Little One"
+
+Button: Shop Now (redirect to Feeders page)
+
+3️⃣ About Brand Section
+Short description about Mimi Choice:
+Mimi Choice is a baby brand offering safe, high-quality feeders and baby accessories. Our first launched product is Life Feeder.
+
+4️⃣ Featured Products Section
+Show 6 products:
+
+Image
+
+Name
+
+Price
+
+Short description
+
+View Details button
+
+5️⃣ Why Choose Us Section
+
+BPA Free
+
+Baby Safe Material
+
+Leak Proof Design
+
+Trusted Quality
+
+6️⃣ Contact Form Section
+Fields:
+
+Name
+
+Email
+
+Phone Number
+
+Message
+
+Interested in buying? (Checkbox)
+
+On submit:
+Send form data to Mimi Choice email (backend ready structure).
+
+7️⃣ Footer
+
+📄 FEEDERS PAGE
+
+Title: Our Feeders
+
+Show 2 big category cards:
+
+Wide Neck
+
+Regular Feeders
+
+Each card clickable.
+
+📄 WIDE NECK PAGE
+
+Title: Wide Neck Feeders
+
+Show 2 category cards:
+
+240ml
+
+340ml
+
+📄 240ML PAGE
+
+Show only 240ml wide neck feeder products in grid layout:
+
+Product image
+
+Name
+
+Price
+
+Description
+
+Add to Cart button (UI only)
+
+📄 340ML PAGE
+
+Show only 340ml wide neck feeder products.
+
+📄 REGULAR FEEDERS PAGE
+
+Show regular feeder products grid.
+
+📄 TEATS PAGE
+
+Show all teat/nipple products in grid.
+
+📄 ABOUT US PAGE
+
+Baby themed header image
+
+Brand story
+
+Mission
+
+Vision
+
+Quality promise
+
+📄 CONTACT PAGE
+
+Contact form
+
+Company email display
+
+Phone placeholder
+
+Footer
+
+📄 PRIVACY POLICY PAGE (SEPARATE PAGE)
+
+Create separate route:
+Include full formatted privacy policy layout with headings:
+
+Information We Collect
+
+How We Use Information
+
+Data Protection
+
+Contact Information
+
+Clean typography.
+
+🎨 DESIGN STYLE
+
+Soft light blue background
+
+Dark blue headings
+
+Red buttons
+
+Purple hover effects
+
+Rounded cards (12px+ border radius)
+
+Soft shadows
+
+Smooth hover animations
+
+Clean baby-friendly look
+
+⚙️ TECH REQUIREMENTS
+
+Use React with routing
+
+Component-based structure
+
+Reusable Header & Footer
+
+Dynamic routing for categories
+
+Organized folder structure
+
+Dummy product data

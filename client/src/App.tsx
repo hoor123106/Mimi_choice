@@ -23,6 +23,27 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/products" component={Products} />
+          
+          {/* New Category Routes */}
+          <Route path="/feeders">
+            <Products category="Feeders" />
+          </Route>
+          <Route path="/feeders/wide-neck">
+            <Products category="Feeders" subcategory="Wide Neck" />
+          </Route>
+          <Route path="/feeders/wide-neck/240ml">
+            <Products category="Feeders" subcategory="Wide Neck" size="240 ml" />
+          </Route>
+          <Route path="/feeders/wide-neck/340ml">
+            <Products category="Feeders" subcategory="Wide Neck" size="340 ml" />
+          </Route>
+          <Route path="/feeders/regular">
+            <Products category="Feeders" subcategory="Regular Feeders" />
+          </Route>
+          <Route path="/teats">
+            <Products category="Teats" />
+          </Route>
+
           <Route path="/products/:id" component={ProductDetail} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />

@@ -11,7 +11,7 @@ export const products = pgTable("products", {
   imageUrl: text("image_url").notNull(),
   category: text("category").notNull(), // 'Feeders', 'Teats', 'Dresses'
   subcategory: text("subcategory"), // 'Wide Neck', 'Regular Feeders'
-  size: text("size"), // '340 ml', '240 ml'
+  size: text("size"), // '340 ml', '240 ml', etc
   stockStatus: text("stock_status").default('In Stock').notNull(),
   isFeatured: boolean("is_featured").default(false).notNull(),
 });

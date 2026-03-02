@@ -70,18 +70,6 @@ async function seedDatabase() {
         size: "3-6 Months",
         stockStatus: "Low Stock",
         isFeatured: true,
-      },
-      {
-        name: "Premium Baby Dress - Ocean Blue",
-        description: "Adorable ocean blue baby dress made from 100% organic cotton. Perfect for both casual wear and special occasions. Features gentle elastic gathers.",
-        shortDescription: "100% organic cotton dress in beautiful ocean blue.",
-        price: 3499,
-        imageUrl: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=1000&auto=format&fit=crop",
-        category: "Dresses",
-        subcategory: null,
-        size: "6-9 Months",
-        stockStatus: "In Stock",
-        isFeatured: false,
       }
     ]);
   }

@@ -11,7 +11,7 @@ import { eq, and } from "drizzle-orm";
 
 export interface IStorage {
   // Products
-  getProducts(filters?: { category?: string, subcategory?: string, isFeatured?: string }): Promise<Product[]>;
+  getProducts(filters?: { category?: string, subcategory?: string, size?: string, isFeatured?: string }): Promise<Product[]>;
   getProduct(id: number): Promise<Product | undefined>;
   
   // Contact Messages
@@ -19,7 +19,7 @@ export interface IStorage {
 }
 
 export class DatabaseStorage implements IStorage {
-  async getProducts(filters?: { category?: string, subcategory?: string, isFeatured?: string }): Promise<Product[]> {
+  async getProducts(filters?: { category?: string, subcategory?: string, size?: string, isFeatured?: string }): Promise<Product[]> {
     let query = db.select().from(products).$dynamic();
     
     const conditions = [];
@@ -28,6 +28,9 @@ export class DatabaseStorage implements IStorage {
     }
     if (filters?.subcategory) {
       conditions.push(eq(products.subcategory, filters.subcategory));
+    }
+    if (filters?.size) {
+      conditions.push(eq(products.size, filters.size));
     }
     if (filters?.isFeatured === 'true') {
       conditions.push(eq(products.isFeatured, true));
