@@ -15,7 +15,7 @@ async function seedDatabase() {
         name: "Life Feeder - Wide Neck 340ml",
         description: "The premium Life Feeder with a wide neck design, making it easier to clean and prepare. 340ml capacity perfect for growing babies. Made with soft, safe, baby-friendly materials. Features an anti-colic venting system.",
         shortDescription: "Premium 340ml wide neck feeder. Anti-colic and easy to clean.",
-        price: 2499, // $24.99
+        price: 2499,
         imageUrl: "https://images.unsplash.com/photo-1628198751509-6462706eeb41?q=80&w=1000&auto=format&fit=crop",
         category: "Feeders",
         subcategory: "Wide Neck",
@@ -36,7 +36,7 @@ async function seedDatabase() {
         isFeatured: true,
       },
       {
-        name: "Classic Regular Feeder",
+        name: "Classic Regular Feeder - 240ml",
         description: "A traditional slim-neck baby feeder that's easy for tiny hands to hold. Made with our signature high-quality safe materials. Perfect for transitioning your baby.",
         shortDescription: "Traditional slim-neck design for easy holding.",
         price: 1899,
@@ -48,8 +48,20 @@ async function seedDatabase() {
         isFeatured: false,
       },
       {
+        name: "Classic Regular Feeder - 120ml",
+        description: "Compact slim-neck baby feeder for early stages. Easy grip and durable construction.",
+        shortDescription: "Traditional slim-neck design, 120ml capacity.",
+        price: 1599,
+        imageUrl: "https://images.unsplash.com/photo-1594833633633-4f923c8fba50?q=80&w=1000&auto=format&fit=crop",
+        category: "Feeders",
+        subcategory: "Regular Feeders",
+        size: "120 ml",
+        stockStatus: "In Stock",
+        isFeatured: false,
+      },
+      {
         name: "Ultra-Soft Silicone Teats (2 Pack)",
-        description: "Our ultra-soft silicone teats mimic the natural feel, designed specifically for our Life Feeders. BPA-free and incredibly durable. Available in variable flow rates.",
+        description: "Our ultra-soft silicone teats mimic the natural feel, designed specifically for our Life Feeders. BPA-free and incredibly durable.",
         shortDescription: "Pack of 2 ultra-soft, natural feel silicone teats.",
         price: 1299,
         imageUrl: "https://images.unsplash.com/photo-1579546059281-a54b3d30b1bc?q=80&w=1000&auto=format&fit=crop",
@@ -60,16 +72,16 @@ async function seedDatabase() {
         isFeatured: true,
       },
       {
-        name: "Premium Baby Dress - Starlight",
-        description: "A beautiful, soft cotton baby dress featuring a starlight pattern. Breathable fabric ensures your little one stays comfortable all day. Snap closures for easy changing.",
-        shortDescription: "Soft, breathable cotton dress with starlight pattern.",
-        price: 3499,
-        imageUrl: "https://images.unsplash.com/photo-1522771930-78848d9293e8?q=80&w=1000&auto=format&fit=crop",
-        category: "Dresses",
+        name: "Fast Flow Teats (2 Pack)",
+        description: "Durable silicone teats with fast flow for older babies. BPA-free and safe.",
+        shortDescription: "Pack of 2 fast flow silicone teats.",
+        price: 1299,
+        imageUrl: "https://images.unsplash.com/photo-1579546059281-a54b3d30b1bc?q=80&w=1000&auto=format&fit=crop",
+        category: "Teats",
         subcategory: null,
-        size: "3-6 Months",
-        stockStatus: "Low Stock",
-        isFeatured: true,
+        size: "Fast Flow",
+        stockStatus: "In Stock",
+        isFeatured: false,
       }
     ]);
   }
@@ -80,7 +92,6 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   
-  // Seed the DB upon startup
   seedDatabase().catch(console.error);
 
   app.get(api.products.list.path, async (req, res) => {
