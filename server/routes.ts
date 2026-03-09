@@ -245,9 +245,9 @@ async function seedDatabase() {
 
     // TEATS
     {
-      name: "Premium Nipples - Regular Pack of 2",
-      description: "High-quality silicone nipples (No: 1024). Regular flow, BPA-free, and natural feel. Pack of 2.",
-      shortDescription: "Premium regular flow silicone nipples.",
+      name: "Premium Teats - Regular Pack of 2",
+      description: "High-quality silicone teats (No: 1024). Regular flow, BPA-free, and natural feel. Pack of 2.",
+      shortDescription: "Premium regular flow silicone teats.",
       price: 1299,
       imageUrl: "/products/1024.jpeg",
       category: "Teats",

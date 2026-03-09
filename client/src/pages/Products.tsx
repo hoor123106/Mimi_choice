@@ -37,7 +37,6 @@ export default function Products({ category: propCategory, subcategory: propSubc
   );
 
   const isMainFeedersPage = activeCategory === "Feeders" && !propSubcategory && !propSize;
-  const isWideNeckLanding = activeCategory === "Feeders" && propSubcategory === "Wide Neck" && !propSize;
 
   const getTitle = () => {
     if (propSize) return `${propSize} Wide Neck Feeders`;
@@ -58,7 +57,7 @@ export default function Products({ category: propCategory, subcategory: propSubc
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
-        {!isMainFeedersPage && !isWideNeckLanding && (
+        {!isMainFeedersPage && (
           <div className="bg-white rounded-2xl shadow-lg shadow-black/5 p-4 md:p-6 mb-12 flex flex-col md:flex-row gap-6 justify-between items-center">
             <div className="flex gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 hide-scrollbar">
               {CATEGORIES.map(cat => (
@@ -89,17 +88,17 @@ export default function Products({ category: propCategory, subcategory: propSubc
 
         {/* Grid or Skeleton */}
         {isLoading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map(i => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+            {[1, 2, 3, 4, 5, 6].map(i => (
               <div key={i} className="space-y-4">
-                <Skeleton className="w-full aspect-square rounded-2xl" />
+                <Skeleton className="w-full aspect-[4/5] rounded-2xl" />
                 <Skeleton className="h-6 w-3/4" />
                 <Skeleton className="h-4 w-1/2" />
                 <Skeleton className="h-10 w-full rounded-xl" />
               </div>
             ))}
           </div>
-        ) : filteredProducts?.length === 0 && !isMainFeedersPage && !isWideNeckLanding ? (
+        ) : filteredProducts?.length === 0 ? (
           <div className="text-center py-24 bg-white rounded-3xl border border-dashed border-secondary">
             <Filter className="w-16 h-16 mx-auto text-secondary mb-4" />
             <h3 className="text-2xl font-bold text-primary mb-2">No products found</h3>
@@ -112,7 +111,7 @@ export default function Products({ category: propCategory, subcategory: propSubc
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {filteredProducts?.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -142,36 +141,6 @@ export default function Products({ category: propCategory, subcategory: propSubc
                     <p className="text-muted-foreground mb-6">Classic slim-neck design, perfect for tiny hands to hold easily.</p>
                     <div className="px-8 py-3 bg-primary text-white rounded-full font-bold group-hover:bg-primary/90 transition-all flex items-center gap-2">
                       View Regular <ChevronRight className="w-5 h-5" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            </div>
-          </div>
-        )}
-
-        {/* Wide Neck Sub-categories */}
-        {isWideNeckLanding && (
-          <div className="mt-12">
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              <Link href="/feeders/wide-neck/240ml" className="group">
-                <Card className="overflow-hidden rounded-3xl border-none shadow-lg hover-elevate transition-all cursor-pointer h-64 bg-white">
-                  <CardContent className="p-0 h-full flex flex-col justify-center items-center text-center p-8 bg-gradient-to-br from-secondary/30 to-white">
-                    <h3 className="text-3xl font-bold text-primary mb-2">240 ml</h3>
-                    <p className="text-muted-foreground mb-6">Perfect capacity for newborns and early feeding stages.</p>
-                    <div className="flex items-center text-accent font-bold group-hover:gap-2 transition-all">
-                      Shop 240ml <ChevronRight className="w-5 h-5" />
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-              <Link href="/feeders/wide-neck/340ml" className="group">
-                <Card className="overflow-hidden rounded-3xl border-none shadow-lg hover-elevate transition-all cursor-pointer h-64 bg-white">
-                  <CardContent className="p-0 h-full flex flex-col justify-center items-center text-center p-8 bg-gradient-to-br from-secondary/30 to-white">
-                    <h3 className="text-3xl font-bold text-primary mb-2">340 ml</h3>
-                    <p className="text-muted-foreground mb-6">Larger capacity for growing babies and hungrier appetites.</p>
-                    <div className="flex items-center text-accent font-bold group-hover:gap-2 transition-all">
-                      Shop 340ml <ChevronRight className="w-5 h-5" />
                     </div>
                   </CardContent>
                 </Card>
