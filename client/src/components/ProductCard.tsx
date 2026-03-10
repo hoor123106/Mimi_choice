@@ -19,8 +19,8 @@ export function ProductCard({ product }: { product: ProductResponse }) {
   };
 
   return (
-    <Link href={`/products/${product.id}`}>
-      <div className="bg-white rounded-[2rem] p-6 shadow-xl shadow-primary/5 border border-secondary/50 hover:shadow-2xl hover:border-primary/20 transition-all duration-500 group flex flex-col h-full cursor-pointer hover:-translate-y-2">
+    <div className="bg-white rounded-[2rem] p-6 shadow-xl shadow-primary/5 border border-secondary/50 hover:shadow-2xl hover:border-primary/20 transition-all duration-500 group flex flex-col h-full hover:-translate-y-2">
+      <Link href={`/products/${product.id}`} className="flex-1 flex flex-col cursor-pointer">
         <div className="relative aspect-[4/5] mb-6 rounded-[1.5rem] overflow-hidden bg-secondary/10 flex items-center justify-center p-4">
           <img 
             src={product.imageUrl} 
@@ -62,31 +62,35 @@ export function ProductCard({ product }: { product: ProductResponse }) {
           <p className="text-sm text-muted-foreground mb-6 line-clamp-2 leading-relaxed">
             {product.shortDescription}
           </p>
-          
-          <div className="mt-auto pt-6 border-t border-secondary/50 flex flex-col gap-4">
-            <div className="text-2xl font-black text-primary">
-              ${(product.price / 100).toFixed(2)}
-            </div>
-            
-            <div className="flex gap-2">
-              <Button 
-                className="flex-1 rounded-xl font-bold bg-primary hover:bg-primary/90 h-12 shadow-lg shadow-primary/20"
-                onClick={handleAddToCart}
-              >
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                Add to Cart
-              </Button>
-              <Button 
-                variant="outline" 
-                size="icon"
-                className="rounded-xl border-secondary text-primary hover:bg-secondary/50 h-12 w-12"
-              >
-                <Eye className="w-5 h-5" />
-              </Button>
-            </div>
-          </div>
+        </div>
+      </Link>
+      
+      <div className="mt-auto pt-6 border-t border-secondary/50 flex flex-col gap-4">
+        <div className="text-2xl font-black text-primary">
+          ${(product.price / 100).toFixed(2)}
+        </div>
+        
+        <div className="flex gap-2">
+          <Button 
+            className="flex-1 rounded-xl font-bold bg-primary hover:bg-primary/90 h-12 shadow-lg shadow-primary/20"
+            onClick={handleAddToCart}
+            data-testid={`button-add-to-cart-${product.id}`}
+          >
+            <ShoppingCart className="w-5 h-5 mr-2" />
+            Add to Cart
+          </Button>
+          <Link href={`/products/${product.id}`} className="flex-none">
+            <Button 
+              variant="outline" 
+              size="icon"
+              className="rounded-xl border-secondary text-primary hover:bg-secondary/50 h-12 w-12"
+              data-testid={`button-view-product-${product.id}`}
+            >
+              <Eye className="w-5 h-5" />
+            </Button>
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
