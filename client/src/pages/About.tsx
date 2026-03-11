@@ -36,8 +36,8 @@ export default function About() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-rose-100 rounded-[3rem] transform -rotate-3 scale-105 blur-sm"></div>
             <img 
-              src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&q=80&w=1000" 
-              alt="Happy baby with caregiver" 
+              src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=1000" 
+              alt="Beautiful baby portrait" 
               className="relative rounded-[3rem] shadow-2xl object-cover w-full h-auto aspect-square md:aspect-[4/3]"
             />
           </div>
@@ -133,8 +133,8 @@ export default function About() {
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
             <img 
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=500" 
-              alt="Parent and baby" 
+              src="https://images.unsplash.com/photo-1503454537688-e6694fe45e13?auto=format&fit=crop&q=80&w=500" 
+              alt="Cute baby portrait" 
               className="w-full h-64 object-cover hover:scale-105 transition-transform"
             />
           </div>
