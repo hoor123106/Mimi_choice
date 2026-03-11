@@ -50,103 +50,34 @@ export default function About() {
           <h2 className="text-4xl font-bold text-center mb-16 text-amber-900">What We Stand For</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-              <img 
-                src="https://images.unsplash.com/photo-1503454537688-e6694fe45e13?auto=format&fit=crop&q=80&w=500" 
-                alt="Baby safety" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-amber-300 to-rose-300 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Heart className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-center mb-4 text-amber-900">Safety First</h3>
-                <p className="text-gray-600 text-center">Every product passes rigorous testing. BPA-free, non-toxic, and certified safe—because nothing matters more than your baby's wellbeing.</p>
+            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow">
+              <div className="w-14 h-14 bg-gradient-to-br from-amber-300 to-rose-300 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <Heart className="w-7 h-7 text-white" />
               </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-amber-900">Safety First</h3>
+              <p className="text-gray-600 text-center">Every product passes rigorous testing. BPA-free, non-toxic, and certified safe—because nothing matters more than your baby's wellbeing.</p>
             </div>
 
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-              <img 
-                src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&q=80&w=500" 
-                alt="Baby comfort" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Sparkles className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-center mb-4 text-amber-900">Crafted with Love</h3>
-                <p className="text-gray-600 text-center">Every stitch, every curve, every detail is designed with your baby's comfort in mind. Premium quality that speaks for itself.</p>
+            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <Sparkles className="w-7 h-7 text-white" />
               </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-amber-900">Crafted with Love</h3>
+              <p className="text-gray-600 text-center">Every stitch, every curve, every detail is designed with your baby's comfort in mind. Premium quality that speaks for itself.</p>
             </div>
 
-            <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-              <img 
-                src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd7b7?auto=format&fit=crop&q=80&w=500" 
-                alt="Natural baby development" 
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-8">
-                <div className="w-14 h-14 bg-gradient-to-br from-green-300 to-teal-300 rounded-full flex items-center justify-center mb-4 mx-auto">
-                  <Leaf className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-center mb-4 text-amber-900">Natural Design</h3>
-                <p className="text-gray-600 text-center">Our products are inspired by nature and designed to support natural feeding and development from day one.</p>
+            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-shadow">
+              <div className="w-14 h-14 bg-gradient-to-br from-green-300 to-teal-300 rounded-full flex items-center justify-center mb-4 mx-auto">
+                <Leaf className="w-7 h-7 text-white" />
               </div>
+              <h3 className="text-2xl font-bold text-center mb-4 text-amber-900">Natural Design</h3>
+              <p className="text-gray-600 text-center">Our products are inspired by nature and designed to support natural feeding and development from day one.</p>
             </div>
 
           </div>
         </div>
       </div>
 
-      {/* Additional Baby Images Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-4xl font-bold text-center mb-12 text-amber-900">Moments That Matter</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-            <img 
-              src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&q=80&w=500" 
-              alt="Newborn baby" 
-              className="w-full h-64 object-cover hover:scale-105 transition-transform"
-            />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-            <img 
-              src="https://images.unsplash.com/photo-1544926674-a20c992f9be0?auto=format&fit=crop&q=80&w=500" 
-              alt="Baby feeding" 
-              className="w-full h-64 object-cover hover:scale-105 transition-transform"
-            />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-            <img 
-              src="https://images.unsplash.com/photo-1519689373023-dd07c7aad4d7?auto=format&fit=crop&q=80&w=500" 
-              alt="Happy baby" 
-              className="w-full h-64 object-cover hover:scale-105 transition-transform"
-            />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-            <img 
-              src="https://images.unsplash.com/photo-1569163139394-de4798aa62b4?auto=format&fit=crop&q=80&w=500" 
-              alt="Baby playing" 
-              className="w-full h-64 object-cover hover:scale-105 transition-transform"
-            />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-            <img 
-              src="https://images.unsplash.com/photo-1503454537688-e6694fe45e13?auto=format&fit=crop&q=80&w=500" 
-              alt="Cute baby portrait" 
-              className="w-full h-64 object-cover hover:scale-105 transition-transform"
-            />
-          </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-            <img 
-              src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd7b7?auto=format&fit=crop&q=80&w=500" 
-              alt="Baby care" 
-              className="w-full h-64 object-cover hover:scale-105 transition-transform"
-            />
-          </div>
-        </div>
-      </div>
 
       {/* Why Mimi Choice - Feature Highlights */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
