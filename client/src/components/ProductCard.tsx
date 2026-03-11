@@ -1,22 +1,8 @@
 import { Link } from "wouter";
 import type { ProductResponse } from "@shared/routes";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ShoppingCart, Eye } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 export function ProductCard({ product }: { product: ProductResponse }) {
-  const { toast } = useToast();
-
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    toast({
-      title: "Added to Cart!",
-      description: `${product.name} is ready for checkout.`,
-      className: "bg-primary text-white border-none",
-    });
-  };
 
   return (
     <div className="bg-white rounded-[2rem] p-6 shadow-xl shadow-primary/5 border border-secondary/50 hover:shadow-2xl hover:border-primary/20 transition-all duration-500 group flex flex-col h-full hover:-translate-y-2">
