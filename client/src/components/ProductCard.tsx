@@ -65,32 +65,6 @@ export function ProductCard({ product }: { product: ProductResponse }) {
         </div>
       </Link>
       
-      <div className="mt-auto pt-6 border-t border-secondary/50 flex flex-col gap-4">
-        <div className="text-2xl font-black text-primary">
-          ${(product.price / 100).toFixed(2)}
-        </div>
-        
-        <div className="flex gap-2">
-          <Button 
-            className="flex-1 rounded-xl font-bold bg-primary hover:bg-primary/90 h-12 shadow-lg shadow-primary/20"
-            onClick={handleAddToCart}
-            data-testid={`button-add-to-cart-${product.id}`}
-          >
-            <ShoppingCart className="w-5 h-5 mr-2" />
-            Add to Cart
-          </Button>
-          <Link href={`/products/${product.id}`} className="flex-none">
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="rounded-xl border-secondary text-primary hover:bg-secondary/50 h-12 w-12"
-              data-testid={`button-view-product-${product.id}`}
-            >
-              <Eye className="w-5 h-5" />
-            </Button>
-          </Link>
-        </div>
-      </div>
     </div>
   );
 }
