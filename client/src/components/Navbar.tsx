@@ -22,7 +22,6 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group cursor-pointer">
             <img src="/logo.png" alt="Mimi Choice" className="h-12 w-auto group-hover:scale-105 transition-transform" />
-            <span className="font-bold text-xl tracking-tight text-primary hidden sm:inline">Mimi Choice</span>
           </Link>
 
           {/* Desktop Navigation */}
