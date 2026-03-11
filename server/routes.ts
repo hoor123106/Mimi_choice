@@ -309,18 +309,6 @@ async function seedDatabase() {
       isFeatured: false,
     },
     {
-      name: "Strawberry Water Color Wide Neck 320ml",
-      description: "Beautiful water color strawberry wide neck feeder (No: 1088). 320ml with colorful handles.",
-      shortDescription: "Strawberry water color wide neck feeder 320ml.",
-      price: 2899,
-      imageUrl: "/products/1088.jpeg",
-      category: "Feeders",
-      subcategory: "Wide Neck",
-      size: "320 ml",
-      stockStatus: "In Stock",
-      isFeatured: false,
-    },
-    {
       name: "Bear Color Wide Neck 320ml",
       description: "Adorable bear-themed colored wide neck feeder (No: 1076). 320ml capacity with safety handles.",
       shortDescription: "Bear color wide neck feeder 320ml.",
