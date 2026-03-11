@@ -8,10 +8,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-white text-primary flex items-center justify-center font-bold text-lg">
-                M
-              </div>
+            <div className="flex items-center gap-3">
+              <img src="/logo.png" alt="Mimi Choice" className="h-12 w-auto" />
               <span className="font-bold text-2xl tracking-tight">Mimi Choice</span>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
@@ -42,17 +40,13 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact</h3>
             <ul className="space-y-4 text-sm text-primary-foreground/80">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 shrink-0 text-white/60" />
-                <span>123 Baby Lane, Sweet Care District, 10001</span>
-              </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 shrink-0 text-white/60" />
-                <span>+1 (555) 123-4567</span>
+                <span>+92 321 2627 1662</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 shrink-0 text-white/60" />
-                <span>hello@mimichoice.com</span>
+                <span>mimichoicee@gmail.com</span>
               </li>
             </ul>
           </div>

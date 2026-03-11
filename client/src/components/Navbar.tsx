@@ -20,11 +20,9 @@ export function Navbar() {
         <div className="flex justify-between items-center h-20">
           
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group cursor-pointer">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-primary/20 flex items-center justify-center text-primary font-bold text-xl group-hover:scale-105 transition-transform">
-              M
-            </div>
-            <span className="font-bold text-2xl tracking-tight text-primary">Mimi Choice</span>
+          <Link href="/" className="flex items-center gap-3 group cursor-pointer">
+            <img src="/logo.png" alt="Mimi Choice" className="h-12 w-auto group-hover:scale-105 transition-transform" />
+            <span className="font-bold text-xl tracking-tight text-primary hidden sm:inline">Mimi Choice</span>
           </Link>
 
           {/* Desktop Navigation */}
