@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useSubmitContact } from "@/hooks/use-contact";
-import { insertContactMessageSchema, type InsertContactMessage } from "@/shared/schema";
+import { contactFormSchema, type ContactFormData } from "@/data/types";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,12 +14,12 @@ import { Mail, Phone, Send } from "lucide-react";
 export default function Contact() {
   const { mutate: submitContact, isPending } = useSubmitContact();
 
-  const form = useForm<InsertContactMessage>({
-    resolver: zodResolver(insertContactMessageSchema),
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: { name: "", email: "", phone: "", message: "", interestedInBuying: false },
   });
 
-  function onSubmit(values: InsertContactMessage) {
+  function onSubmit(values: ContactFormData) {
     submitContact(values, { onSuccess: () => form.reset() });
   }
 

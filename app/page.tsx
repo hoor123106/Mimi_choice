@@ -43,6 +43,7 @@ export default function Home() {
                 alt="Happy baby"
                 width={1000}
                 height={750}
+                priority
                 className="relative z-10 rounded-[3rem] shadow-2xl object-cover aspect-square md:aspect-[4/3] w-full"
               />
             </div>

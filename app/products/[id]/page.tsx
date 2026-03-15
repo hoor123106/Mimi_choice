@@ -48,7 +48,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 mb-24">
           <div className="relative bg-secondary/20 rounded-[2.5rem] p-6 flex items-center justify-center border border-secondary/50">
             <div className="relative w-full aspect-square">
-              <Image src={product.imageUrl} alt={product.name} fill className="object-contain p-4" />
+              <Image src={product.imageUrl} alt={product.name} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-contain p-4" />
             </div>
             {product.isFeatured && (
               <Badge className="absolute top-8 left-8 bg-accent hover:bg-accent/90 text-white border-none px-4 py-1.5 text-sm shadow-lg">

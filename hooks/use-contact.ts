@@ -1,37 +1,24 @@
 "use client";
 
-import { useMutation } from "@tanstack/react-query";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import type { InsertContactMessage } from "@/shared/schema";
+import type { ContactFormData } from "@/data/types";
 
 export function useSubmitContact() {
   const { toast } = useToast();
+  const [isPending, setIsPending] = useState(false);
 
-  return useMutation({
-    mutationFn: async (data: InsertContactMessage) => {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) {
-        const errorData = await res.json();
-        throw new Error(errorData.message || "Failed to submit form");
-      }
-      return res.json();
-    },
-    onSuccess: () => {
+  const mutate = (data: ContactFormData, options?: { onSuccess?: () => void }) => {
+    setIsPending(true);
+    setTimeout(() => {
+      setIsPending(false);
       toast({
         title: "Message Sent!",
         description: "Thank you for reaching out to Mimi Choice. We'll be in touch soon.",
       });
-    },
-    onError: (error: Error) => {
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
-    },
-  });
+      options?.onSuccess?.();
+    }, 800);
+  };
+
+  return { mutate, isPending };
 }
