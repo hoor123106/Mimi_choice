@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/runner/workspace/app/not-found.tsx"],"sourcesContent":["import Link from \"next/link\";\n\nexport default function NotFound() {\n  return (\n    <div className=\"min-h-[70vh] flex flex-col items-center justify-center text-center px-4\">\n      <div className=\"text-8xl font-black text-secondary mb-6\">404</div>\n      <h1 className=\"text-4xl font-bold text-primary mb-4\">Page Not Found</h1>\n      <p className=\"text-muted-foreground text-lg mb-8 max-w-md\">Oops! The page you&apos;re looking for doesn&apos;t exist. Let&apos;s get you back to the good stuff.</p>\n      <Link href=\"/\" className=\"btn-accent px-8 py-4 rounded-xl text-base font-semibold inline-flex items-center justify-center\">\n        Go Back Home\n      </Link>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;;0BACb,8OAAC;gBAAI,WAAU;0BAA0C;;;;;;0BACzD,8OAAC;gBAAG,WAAU;0BAAuC;;;;;;0BACrD,8OAAC;gBAAE,WAAU;0BAA8C;;;;;;0BAC3D,8OAAC,0LAAI;gBAAC,MAAK;gBAAI,WAAU;0BAAkG;;;;;;;;;;;;AAKjI"}}]
+}
