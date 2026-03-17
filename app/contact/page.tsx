@@ -54,7 +54,6 @@ export default function Contact() {
                   <Phone className="w-6 h-6 text-secondary shrink-0" />
                   <div>
                     <h4 className="font-semibold text-lg mb-1">Call Us</h4>
-                    <p className="text-primary-foreground/80">+92 321 2627 1662</p>
                     <p className="text-primary-foreground/80">+92 321 6093225</p>
                   </div>
                 </li>

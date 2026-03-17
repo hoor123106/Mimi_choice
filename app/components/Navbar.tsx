@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, ShoppingBag, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
@@ -23,9 +24,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-20">
 
           <Link href="/" className="flex items-center gap-3 group cursor-pointer">
-            <div className="h-12 w-12 sm:h-14 sm:w-14 rounded-full bg-primary text-white flex items-center justify-center font-extrabold text-xl sm:text-2xl shadow-md group-hover:scale-105 transition-transform">
-              R
-            </div>
+            <Image src="/logo.png" alt="Mimi Choice" width={80} height={80} className="h-20 w-auto group-hover:scale-105 transition-transform" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
