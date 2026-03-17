@@ -84,7 +84,7 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="py-24 bg-white"
+        className="hidden md:block py-24 bg-white"
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.22 }}
