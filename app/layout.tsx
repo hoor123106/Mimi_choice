@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { Providers } from "@/components/Providers";
+import { Navbar } from "@/app/components/Navbar";
+import { Footer } from "@/app/components/Footer";
+import { Providers } from "@/app/components/Providers";
+import { CursorFollower } from "@/app/components/CursorFollower";
 
 export const metadata: Metadata = {
   title: "Mimi Choice - Premium Baby Products",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Providers>
+          <CursorFollower />
           <div className="flex flex-col min-h-screen">
             <Navbar />
             <main className="flex-1">{children}</main>

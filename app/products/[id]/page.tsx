@@ -3,10 +3,10 @@
 import { use } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useProduct, useProducts } from "@/hooks/use-products";
-import { ProductCard } from "@/components/ProductCard";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Badge } from "@/components/ui/badge";
+import { useProduct, useProducts } from "../../../hooks/use-products";
+import { ProductCard } from "../../components/ProductCard";
+import { Skeleton } from "../../components/skeleton";
+import { Badge } from "../../components/badge";
 import { ShieldCheck, Truck, RotateCcw, Check } from "lucide-react";
 
 export default function ProductDetail({ params }: { params: Promise<{ id: string }> }) {

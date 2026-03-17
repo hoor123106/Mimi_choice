@@ -1,27 +1,28 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { products } from "@/data/products";
-import { ProductCard } from "@/components/ProductCard";
+import { useProducts } from "../../hooks/use-products";
+import { ProductCard } from "../components/ProductCard";
 import { Search, Filter } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import type { Product } from "@/data/products";
+import { Input } from "../components/input";
+import type { Product } from "../../data/products";
 
 type FilterKey = "All" | "Teats" | "Wide Neck" | "Regular";
 
-const FILTERS: { key: FilterKey; label: string; description: string }[] = [
-  { key: "All", label: "All Products", description: "Everything we offer" },
-  { key: "Teats", label: "Teats", description: "Soft silicone teats" },
-  { key: "Wide Neck", label: "Wide Neck Feeders", description: "Wide neck design" },
-  { key: "Regular", label: "Regular Feeders", description: "Classic slim-neck" },
+const FILTERS: { key: FilterKey; label: string }[] = [
+  { key: "All", label: "All Products" },
+  { key: "Teats", label: "Teats" },
+  { key: "Wide Neck", label: "Wide Neck Feeders" },
+  { key: "Regular", label: "Regular Feeders" },
 ];
 
 export default function Products() {
   const [activeFilter, setActiveFilter] = useState<FilterKey>("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const { data: allProducts, isLoading } = useProducts();
 
   const filtered: Product[] = useMemo(() => {
-    let result = [...products];
+    let result = [...allProducts];
     if (activeFilter === "Teats") result = result.filter((p) => p.category === "Teats");
     else if (activeFilter === "Wide Neck") result = result.filter((p) => p.subcategory === "Wide Neck");
     else if (activeFilter === "Regular") result = result.filter((p) => p.subcategory === "Regular Feeders");
@@ -30,13 +31,13 @@ export default function Products() {
       result = result.filter((p) => p.name.toLowerCase().includes(q) || p.shortDescription.toLowerCase().includes(q));
     }
     return result;
-  }, [activeFilter, searchQuery]);
+  }, [activeFilter, searchQuery, allProducts]);
 
   return (
     <div className="bg-slate-50 min-h-screen pb-24">
       <div className="bg-primary text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">Our Products</h1>
+          <h1 className="text-4xl font-bold mb-4 text-[#22C1C3]">Our Products</h1>
           <p className="text-primary-foreground/80 max-w-2xl mx-auto">Discover our premium range of baby essentials designed with love, care, and the highest safety standards.</p>
         </div>
       </div>
@@ -56,9 +57,9 @@ export default function Products() {
                   }`}
                 >
                   <span className="text-sm font-semibold">{f.label}</span>
-                  <span className={`text-xs font-normal mt-0.5 ${activeFilter === f.key ? "text-white/70" : "text-muted-foreground"}`}>
+                  {/* <span className={`text-xs font-normal mt-0.5 ${activeFilter === f.key ? "text-white/70" : "text-muted-foreground"}`}>
                     {f.description}
-                  </span>
+                  </span> */}
                 </button>
               ))}
             </div>
@@ -73,15 +74,21 @@ export default function Products() {
             </div>
           </div>
 
-          <div className="mt-3 flex items-center gap-2">
+          {/* <div className="mt-3 flex items-center gap-2">
             <span className="text-sm text-muted-foreground">
               Showing <span className="font-semibold text-primary">{filtered.length}</span> product{filtered.length !== 1 ? "s" : ""}
               {activeFilter !== "All" && <span> in <span className="font-semibold text-accent">{FILTERS.find(f => f.key === activeFilter)?.label}</span></span>}
             </span>
-          </div>
+          </div> */}
         </div>
 
-        {filtered.length === 0 ? (
+        {isLoading ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="bg-white rounded-[2rem] p-6 shadow-xl border border-secondary/50 animate-pulse h-[380px]" />
+            ))}
+          </div>
+        ) : filtered.length === 0 ? (
           <div className="text-center py-24 bg-white rounded-3xl border border-dashed border-secondary">
             <Filter className="w-16 h-16 mx-auto text-secondary mb-4" />
             <h3 className="text-2xl font-bold text-primary mb-2">No products found</h3>

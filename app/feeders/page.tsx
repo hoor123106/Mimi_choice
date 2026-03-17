@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { useProducts } from "@/hooks/use-products";
-import { ProductCard } from "@/components/ProductCard";
-import { Skeleton } from "@/components/ui/skeleton";
+// import Link from "next/link";
+import { useProducts } from "../../hooks/use-products";
+import { ProductCard } from "../components/ProductCard";
+import { Skeleton } from "../components/skeleton";
 import { Search, ChevronRight } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "../components/input";
+// import { Card, CardContent } from "../components/card";
 
 export default function Feeders() {
   const [subcategory, setSubcategory] = useState<string | null>(null);
@@ -47,7 +47,7 @@ export default function Feeders() {
           </div>
         </div>
 
-        {!subcategory && (
+        {/* {!subcategory && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <Link href="/feeders/wide-neck" className="group">
               <Card className="overflow-hidden rounded-3xl border-none shadow-lg transition-all cursor-pointer h-72 bg-[#E6F4FF]">
@@ -72,7 +72,7 @@ export default function Feeders() {
               </Card>
             </Link>
           </div>
-        )}
+        )} */}
 
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
