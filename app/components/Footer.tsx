@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Heart, Mail, Phone } from "lucide-react";
 
 export function Footer() {
@@ -10,7 +9,9 @@ export function Footer() {
 
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <Image src="/logo.png" alt="Mimi Choice" width={48} height={48} className="h-12 w-auto" />
+              <div className="h-12 w-12 rounded-full bg-white text-primary flex items-center justify-center font-extrabold text-xl shadow-md">
+                R
+              </div>
               <span className="font-bold text-2xl tracking-tight">Mimi Choice</span>
             </div>
             <p className="text-primary-foreground/80 text-sm leading-relaxed">
