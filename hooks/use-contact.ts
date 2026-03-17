@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { useToast } from "@/hooks/use-toast";
-import type { ContactFormData } from "@/data/types";
+import { useToast } from "../hooks/use-toast";
+import type { ContactFormData } from "../data/types";
 
 export function useSubmitContact() {
   const { toast } = useToast();
